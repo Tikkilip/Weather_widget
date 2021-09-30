@@ -1,0 +1,72 @@
+$primary-color: rgb(96, 181, 230);
+$font-color: bisque;
+
+@mixin icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-top: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin words {
+  font-size: 20px;
+  font-weight: 600;
+  border-top: 2px solid $font-color;
+  padding-top: 5px;
+}
+
+body {
+  background: $primary-color;
+  height: 100%;
+}
+
+.weather_widget {
+  background: url("../img/image-from-rawpixel-id-2905770-png.png") no-repeat top / 220%;
+  width: 330px;
+  height: 530px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 14px 18px rgba(0, 0, 0, 0.22);
+  margin: 20px auto;
+
+  .header {
+    display: flex;
+  }
+
+  .icon {
+    @include icon;
+
+    p {
+      @include words;
+    }
+  }
+
+  .weather_info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: center;
+    margin-top: 40px;
+    color: $font-color;
+  }
+
+  #Number {
+    font-size: 120px;
+    font-weight: 600;
+  }
+
+  .sun_picture {
+    display: flex;
+    justify-content: flex-end;
+    margin: 40px 10px 0 0;
+  }
+}
+
+@media screen and (max-width: 528px) {
+  .weather_widget {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px auto;
+  }
+}
